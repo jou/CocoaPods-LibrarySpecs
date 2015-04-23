@@ -51,12 +51,14 @@ Pod::Spec.new do |s|
   s.subspec 'fixed' do |fs|
     fs.source_files = base_source_files + ['silk/fixed']
     fs.public_header_files = base_public_header_files
+    fs.exclude_files = "celt/opus_custom_demo.c"
 
     fs.compiler_flags = base_compiler_flags + ['-DFIXED_POINT']
   end
   s.subspec 'float' do |fs|
     fs.source_files = base_source_files + ['silk/float', 'celt/x86']
     fs.public_header_files = base_public_header_files
+    fs.exclude_files = "celt/opus_custom_demo.c"
 
     fs.compiler_flags = base_compiler_flags + ['-DFLOATING_POINT']
   end
